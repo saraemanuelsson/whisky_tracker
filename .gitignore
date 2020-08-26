@@ -1,0 +1,59 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+frontend/node_modules
+frontend/.pnp
+frontend/.pnp.js
+
+# testing
+frontend/coverage
+
+# production
+frontend/build
+
+# misc
+frontend/.DS_Store
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+
+# backend
+whisky_app_backend/HELP.md
+whisky_app_backend/target/
+whisky_app_backend/!.mvn/wrapper/maven-wrapper.jar
+whisky_app_backend/!**/src/main/**/target/
+whisky_app_backend/!**/src/test/**/target/
+
+### STS ###
+whisky_app_backend/.apt_generated
+whisky_app_backend/.classpath
+whisky_app_backend/.factorypath
+whisky_app_backend/.project
+whisky_app_backend/.settings
+whisky_app_backend/.springBeans
+whisky_app_backend/.sts4-cache
+
+### IntelliJ IDEA ###
+whisky_app_backend/.idea
+whisky_app_backend/*.iws
+whisky_app_backend/*.iml
+whisky_app_backend/*.ipr
+
+### NetBeans ###
+whisky_app_backend//nbproject/private/
+whisky_app_backend//nbbuild/
+whisky_app_backend//dist/
+whisky_app_backend//nbdist/
+whisky_app_backend//.nb-gradle/
+whisky_app_backend/build/
+whisky_app_backend/!**/src/main/**/build/
+whisky_app_backend/!**/src/test/**/build/
+
+### VS Code ###
+whisky_app_backend/.vscode/
