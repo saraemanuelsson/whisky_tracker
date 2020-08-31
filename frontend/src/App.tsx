@@ -1,6 +1,5 @@
-import React from 'react';
-import './App.css';
-import WhiskyContainer from "./containers/WhiskyContainer"
+import * as React from 'react';
+import { WhiskyContainer } from './containers/WhiskyContainer';
 
 function App() {
   return (
