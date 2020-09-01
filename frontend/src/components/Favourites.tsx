@@ -1,7 +1,15 @@
 import * as React from "react";
+import { Whisky } from "../types/types"
 
-export const FavouritesList = (props: any) => {
+interface Props {
+    favourites?: Whisky[],
+    className?: string
+}
+
+export const FavouritesList: React.FC<Props> = (props) => {
     return (
-        <h2>This will be a list of favourites!</h2>
+        <div className={props.className}>
+            <h2>This will be a Favourites!</h2>
+        </div>
     )
 }

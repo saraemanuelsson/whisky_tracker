@@ -1,7 +1,13 @@
 import * as React from "react";
 
-export const Map = (props: any) => {
+interface Props {
+    className?: string
+}
+
+export const Map: React.FC<Props> = (props) => {
     return (
-        <h2>This will be a map!</h2>
+        <div className={props.className}>
+            <h2>This will be a map!</h2>
+        </div>
     )
 }

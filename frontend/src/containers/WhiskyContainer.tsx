@@ -4,9 +4,9 @@ import { DistilleryList } from "../components/DistilleryList";
 import { WhiskyList } from "../components/WhiskyList";
 import { FavouritesList } from "../components/Favourites";
 import { CupboardList } from "../components/CupboardList";
+import { DistilleryInfo } from "../components/DistilleryInfo";
 import { Whisky, Distillery, Person } from "../types/types";
 const Logo = require("../assets/logo.png");
-// import * as Logo from "../assets/logo.png";
 
 interface Props {
     props?: any;
@@ -44,12 +44,17 @@ export class WhiskyContainer extends React.Component<Props, State> {
     render() {
         return (
             <>
-                <img src={Logo} alt="Logo"/>
-                <Map id="map-id"/>
-                <DistilleryList distilleries = {this.state.distilleries} />
-                <WhiskyList whiskies = {this.state.whiskies} />
-                <FavouritesList favourites = {this.filteredWhiskies("starred")} />
-                <CupboardList cupboard = {this.filteredWhiskies("inCupboard")} />
+                <div className="top-section">
+                    <img src={Logo} alt="Logo" className="logo"/>
+                    <Map className="map"/>
+                    <DistilleryInfo className="distillery-info"/>
+                </div>
+                <div className="bottom-bit">
+                    <DistilleryList distilleries = {this.state.distilleries} />
+                    <WhiskyList whiskies = {this.state.whiskies} />
+                    <FavouritesList favourites = {this.filteredWhiskies("starred")} />
+                    <CupboardList cupboard = {this.filteredWhiskies("inCupboard")} />
+                </div>
             </>
         )
     }

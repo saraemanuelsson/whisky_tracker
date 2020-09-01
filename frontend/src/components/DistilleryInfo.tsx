@@ -6,10 +6,10 @@ interface Props {
     className?: string
 }
 
-export const DistilleryListItem: React.FC<Props> = (props) => {
+export const DistilleryInfo: React.FC<Props> = (props) => {
     return (
         <div className={props.className}>
-            <h2>This will be a DistilleryListItem!</h2>
+            <h2>DistilleryInfo tbd!</h2>
         </div>
     )
 }

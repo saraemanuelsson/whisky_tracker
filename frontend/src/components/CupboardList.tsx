@@ -1,8 +1,15 @@
 import * as React from "react";
+import { Whisky } from "../types/types"
 
-export const CupboardList = (props: any) => {
-    
+interface Props {
+    cupboard?: Whisky[],
+    className?: string
+}
+
+export const CupboardList: React.FC<Props> = (props) => {
     return (
-        <h2>This will be a cupboard!</h2>
+        <div className={props.className}>
+            <h2>This will be a CupboardList!</h2>
+        </div>
     )
 }
