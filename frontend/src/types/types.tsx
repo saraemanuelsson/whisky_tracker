@@ -1,20 +1,22 @@
 export interface Whisky {
-    name: String;
+    [key: string]: any;
+    name: string;
     year: number;
     distillery: Distillery;
     tried: Boolean;
     starred: Boolean;
     inCupboard: Boolean;
-    notes: String;
+    notes: string;
     person: number;
     id: number;
 }
 
 export interface Distillery {
-    name: String;
-    location: String;
-    region: String;
-    image: String;
+    [key: string]: any;
+    name: string;
+    location: string;
+    region: string;
+    image: string;
     whiskies: Whisky[];
     visited: Boolean;
     starred: Boolean;
@@ -22,7 +24,8 @@ export interface Distillery {
 }
 
 export interface Person {
-    name: String;
+    [key: string]: any;
+    name: string;
     whiskies: Whisky[];
     id: number;
 }
