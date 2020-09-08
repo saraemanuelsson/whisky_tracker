@@ -1,11 +1,10 @@
 import * as React from "react";
 import { Header } from "../components/Header";
-import { Map } from "../components/Map";
+import { MapContainer } from "./MapContainer";
 import { DistilleryList } from "../components/DistilleryList";
 import { WhiskyList } from "../components/WhiskyList";
 import { FavouritesList } from "../components/Favourites";
 import { CupboardList } from "../components/CupboardList";
-import { DistilleryInfo } from "../components/DistilleryInfo";
 import { Whisky, Distillery, Person } from "../types/types";
 
 interface Props {
@@ -45,10 +44,7 @@ export class WhiskyContainer extends React.Component<Props, State> {
         return (
             <>
                 <Header />
-                <div className="top-section">
-                    <Map className="map"/>
-                    <DistilleryInfo className="distillery-info"/>
-                </div>
+                <MapContainer />
                 <div className="bottom-bit">
                     <DistilleryList distilleries = {this.state.distilleries} />
                     <WhiskyList whiskies = {this.state.whiskies} />

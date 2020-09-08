@@ -181,4 +181,11 @@ body {
           transform: translate(-50%, -50%);
   text-align: center;
 }
+
+.map-container-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
 /*# sourceMappingURL=app.css.map */
