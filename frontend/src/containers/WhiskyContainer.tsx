@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Header } from "../components/Header";
 import { Map } from "../components/Map";
 import { DistilleryList } from "../components/DistilleryList";
 import { WhiskyList } from "../components/WhiskyList";
@@ -6,7 +7,6 @@ import { FavouritesList } from "../components/Favourites";
 import { CupboardList } from "../components/CupboardList";
 import { DistilleryInfo } from "../components/DistilleryInfo";
 import { Whisky, Distillery, Person } from "../types/types";
-const Logo = require("../assets/logo.png");
 
 interface Props {
     props?: any;
@@ -44,8 +44,8 @@ export class WhiskyContainer extends React.Component<Props, State> {
     render() {
         return (
             <>
+                <Header />
                 <div className="top-section">
-                    <img src={Logo} alt="Logo" className="logo"/>
                     <Map className="map"/>
                     <DistilleryInfo className="distillery-info"/>
                 </div>

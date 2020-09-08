@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Whisky } from "../types/types"
+import { Whisky } from "../types/types";
 
 interface Props {
     favourite?: Whisky,

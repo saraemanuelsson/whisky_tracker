@@ -1,10 +1,13 @@
-@import './whiskycontainer.scss';
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
 
-html {
-    background: url("../assets/background.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "layout/header";
+
+@import "pages/home";
 
