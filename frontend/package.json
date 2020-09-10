@@ -10,8 +10,11 @@
     "@types/node": "^12.12.54",
     "@types/react": "^16.9.47",
     "@types/react-dom": "^16.9.8",
+    "@types/react-leaflet": "^2.5.2",
+    "leaflet": "^1.7.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-leaflet": "^2.7.0",
     "react-scripts": "3.4.3",
     "react-scripts-scss-ts": "^2.17.1",
     "typescript": "^3.7.5"

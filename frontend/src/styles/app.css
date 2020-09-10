@@ -143,6 +143,11 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.map {
+  height: 50vh;
+  width: 50vw;
+}
+
 .header {
   height: 95vh;
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(240, 162, 2, 0.8)), to(rgba(217, 93, 57, 0.8))), url("../assets/headerpic2.jpg");

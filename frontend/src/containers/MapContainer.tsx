@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Distillery, Whisky } from "../types/types";
-import { Map } from "../components/Map";
+import { LeafletMap } from "../components/LeafletMap";
 import { DetailedInfo } from "../components/DetailedInfo";
 import { DistilleryPhotos } from "../components/DistilleryPhotos";
 
@@ -33,7 +33,7 @@ export class MapContainer extends React.Component<Props, State> {
                         <DistilleryPhotos className="composition" />
                     </div>
                     <div className="map-box">
-                        <Map className="map"/>
+                        <LeafletMap className="map"/>
                     </div>
                 </div>
             </>
