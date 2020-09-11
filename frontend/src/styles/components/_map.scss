@@ -1,4 +1,35 @@
 .map {
-    height: 50vh;
-    width: 50vw;
+    height: 90vh;
+    clip-path: polygon(0 13.5%, 100% 0, 100% 86.5%, 0 100%);
+    position: relative;
+    filter: grayscale(80%);
+    margin-top: -12rem;
 }
+
+.map-div {
+
+}
+
+.leaflet-control {
+    &.leaflet-control-attribution {
+        display: hidden;
+    }
+    &.leaflet-control-zoom {
+        margin-top: 7rem;
+    }
+}
+
+.contributor-link {
+    display: inline-block;
+}
+
+p.contributor-link {
+    margin-left: 0.5rem;
+}
+
+// .leaflet-control-zoom.leaflet-bar.leaflet-control {
+//     margin-left: 1rem;
+//     margin-top: 6rem;
+// }
+
+//Make grey border on top of image, resizing the map should work after!

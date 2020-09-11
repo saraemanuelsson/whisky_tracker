@@ -144,8 +144,29 @@ body {
 }
 
 .map {
-  height: 50vh;
-  width: 50vw;
+  height: 90vh;
+  -webkit-clip-path: polygon(0 13.5%, 100% 0, 100% 86.5%, 0 100%);
+          clip-path: polygon(0 13.5%, 100% 0, 100% 86.5%, 0 100%);
+  position: relative;
+  -webkit-filter: grayscale(80%);
+          filter: grayscale(80%);
+  margin-top: -12rem;
+}
+
+.leaflet-control.leaflet-control-attribution {
+  display: hidden;
+}
+
+.leaflet-control.leaflet-control-zoom {
+  margin-top: 7rem;
+}
+
+.contributor-link {
+  display: inline-block;
+}
+
+p.contributor-link {
+  margin-left: 0.5rem;
 }
 
 .header {
@@ -190,7 +211,10 @@ body {
 .map-container-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 40% 60%;
+      grid-template-columns: 40% 60%;
+  background-color: #f7f7f7;
+  padding: 15rem 0;
+  margin-top: -20vh;
 }
 /*# sourceMappingURL=app.css.map */
