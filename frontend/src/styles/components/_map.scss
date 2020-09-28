@@ -6,10 +6,6 @@
     margin-top: -12rem;
 }
 
-.map-div {
-
-}
-
 .leaflet-control {
     &.leaflet-control-attribution {
         display: hidden;
@@ -19,17 +15,7 @@
     }
 }
 
-.contributor-link {
-    display: inline-block;
-}
-
-p.contributor-link {
-    margin-left: 0.5rem;
-}
-
 // .leaflet-control-zoom.leaflet-bar.leaflet-control {
 //     margin-left: 1rem;
 //     margin-top: 6rem;
 // }
-
-//Make grey border on top of image, resizing the map should work after!

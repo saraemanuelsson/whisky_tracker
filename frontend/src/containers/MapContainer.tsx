@@ -3,6 +3,7 @@ import { Distillery, Whisky } from "../types/types";
 import { LeafletMap } from "../components/LeafletMap";
 import { DetailedInfo } from "../components/DetailedInfo";
 import { DistilleryPhotos } from "../components/DistilleryPhotos";
+import { LayerContextProvider } from "../context/LayerContext";
 
 interface Props {
     distilleries?: Distillery[];
@@ -33,7 +34,9 @@ export class MapContainer extends React.Component<Props, State> {
                         <DistilleryPhotos className="composition" />
                     </div>
                     <div className="map-box">
-                        <LeafletMap className="map"/>
+                        <LayerContextProvider>
+                            <LeafletMap className="map"/>
+                        </LayerContextProvider>
                     </div>
                 </div>
             </>
