@@ -10,14 +10,13 @@ export const LeafletMap: React.FC<Props> = (props) => {
 
     const defaultLatLng: LatLngTuple = [56.788845, -4.3396];
     const zoom: number = 7;
+    const [marker, setMarker] = useState<Array<number>>([0,0])
 
-    const [marker, setMarker] = useState([0,0])
+    // const addDistilleryButton = createLeafletElement(props: )
 
     const handleClick = (event:any) => {
-        console.log("Clicked!");
         const clickedLocation: Array<number> = [event.latlng.lat, event.latlng.lng]
         setMarker(clickedLocation)
-        console.log(clickedLocation);
     }
     
     return (
@@ -29,7 +28,7 @@ export const LeafletMap: React.FC<Props> = (props) => {
                 </TileLayer>
                 <Marker position={[marker[0], marker[1]]}>
                         <Popup>
-                            <span>A pretty CSS3 popup. <br/> Easily customizable.</span>
+                            <span></span>
                         </Popup>
                 </Marker>
             </Map>

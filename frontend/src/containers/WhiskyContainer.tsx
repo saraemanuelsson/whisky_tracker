@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import { Header } from "../components/Header";
 import { MapContainer } from "./MapContainer";
 import { DistilleryList } from "../components/DistilleryList";
@@ -11,48 +11,52 @@ interface Props {
     props?: any;
 }
 
-interface State {
-    distilleries: Distillery[];
-    whiskies: Whisky[];
-    persons: Person[];
-}
+export const WhiskyContainer:React.FC<Props> = (props) => {
 
-export class WhiskyContainer extends React.Component<Props, State> {
+    const [distilleries, setDistilleries] = useState<Distillery[]>()
+    const [whiskies, setWhiskies] = useState<Whisky[]>()
+    const [persons, setPersons] = useState<Person[]>()
 
-    state: State = {
-        distilleries: [],
-        whiskies: [],
-        persons: []
+    useEffect(() => {
+        
+        const baseURL: String = "http://localhost:8080/"
+
+        fetch(baseURL + "distilleries")
+        .then(res => res.json())
+        .then(distilleries => setDistilleries(distilleries))
+        .catch(error => console.error)
+
+        fetch(baseURL + "whiskies")
+        .then(res => res.json())
+        .then(whiskies => setWhiskies(whiskies))
+        .catch(error => console.error)
+
+        fetch(baseURL + "persons")
+        .then(res => res.json())
+        .then(persons => setPersons(persons))
+        .catch(error => console.error)
+    })
+
+    const filteredWhiskies = (criteria: string): any => {
+        // if (whiskies?.length !== 0) {
+        //     const filteredWhiskies: Whisky[] = whiskies.filter((whisky) => !whisky[criteria])
+        //     return filteredWhiskies
+        // } else {
+        //     return null
+        // }
     }
 
-    componentDidMount() {
-        const baseURL = "http://localhost:8080/"
-
-        for (const key in this.state) {            
-            fetch(baseURL + key.toString())
-            .then(res => res.json())
-            .then(result => this.setState<never>({[key]: result}))
-            .catch(error => console.error)
-        }
-    }
-
-    filteredWhiskies(criteria: string): Whisky[] {
-        return this.state.whiskies.filter((whisky) => !whisky[criteria])
-    }
-
-    render() {
-        return (
-            <>
-                <Header />
-                <MapContainer />
-                <div className="bottom-bit">
-                    <DistilleryList distilleries = {this.state.distilleries} />
-                    <WhiskyList whiskies = {this.state.whiskies} />
-                    <FavouritesList favourites = {this.filteredWhiskies("starred")} />
-                    <CupboardList cupboard = {this.filteredWhiskies("inCupboard")} />
-                </div>
-            </>
-        )
-    }
+    return (
+        <>
+            <Header />
+            <MapContainer />
+            <div className="bottom-bit">
+                <DistilleryList distilleries = {distilleries} />
+                <WhiskyList whiskies = {whiskies} />
+                <FavouritesList favourites = {filteredWhiskies("starred")} />
+                <CupboardList cupboard = {filteredWhiskies("inCupboard")} />
+            </div>
+        </>
+    )
 
 }
