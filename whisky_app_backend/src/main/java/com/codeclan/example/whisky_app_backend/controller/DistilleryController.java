@@ -1,6 +1,8 @@
 package com.codeclan.example.whisky_app_backend.controller;
 
 import com.codeclan.example.whisky_app_backend.models.Distillery;
+import com.codeclan.example.whisky_app_backend.models.ERegions;
+import com.codeclan.example.whisky_app_backend.payload.request.SaveDistilleryRequest;
 import com.codeclan.example.whisky_app_backend.repositories.DistilleryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,7 +32,11 @@ public class DistilleryController {
     }
 
     @PostMapping(value = "/distilleries")
-    public ResponseEntity<Distillery> postDistillery(@RequestBody Distillery distillery){
+    public ResponseEntity<Distillery> postDistillery(@RequestBody SaveDistilleryRequest saveDistilleryRequest) {
+        String name = saveDistilleryRequest.getName();
+        double[] location = saveDistilleryRequest.getLocation();
+        ERegions region = saveDistilleryRequest.getRegion();
+        Distillery distillery = new Distillery(name, location, region);
         distilleryRepository.save(distillery);
         return new ResponseEntity<>(distillery, HttpStatus.CREATED);
     }

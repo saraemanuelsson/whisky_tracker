@@ -6,6 +6,7 @@ import { WhiskyList } from "../components/WhiskyList";
 import { FavouritesList } from "../components/Favourites";
 import { CupboardList } from "../components/CupboardList";
 import { Whisky, Distillery, Person } from "../types/types";
+import userService from "../services/userService"
 
 interface Props {
     props?: any;
@@ -19,23 +20,18 @@ export const WhiskyContainer:React.FC<Props> = (props) => {
 
     useEffect(() => {
         
-        const baseURL: String = "http://localhost:8080/"
-
-        fetch(baseURL + "distilleries")
-        .then(res => res.json())
-        .then(distilleries => setDistilleries(distilleries))
+        userService.getDistilleries()
+        .then(response => setDistilleries((response.data)))
         .catch(error => console.error)
 
-        fetch(baseURL + "whiskies")
-        .then(res => res.json())
-        .then(whiskies => setWhiskies(whiskies))
+        userService.getWhiskies()
+        .then(response => setWhiskies((response.data)))
         .catch(error => console.error)
 
-        fetch(baseURL + "persons")
-        .then(res => res.json())
-        .then(persons => setPersons(persons))
+        userService.getPersons()
+        .then(response => setPersons((response.data)))
         .catch(error => console.error)
-    })
+    }, [])
 
     const filteredWhiskies = (criteria: string): any => {
         // if (whiskies?.length !== 0) {

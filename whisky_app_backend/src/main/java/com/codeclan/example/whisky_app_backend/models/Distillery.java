@@ -3,6 +3,7 @@ package com.codeclan.example.whisky_app_backend.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,10 +15,10 @@ public class Distillery{
     private String name;
 
     @Column(name = "location")
-    private String location;
+    private double[] location;
 
     @Column(name = "region")
-    private Regions region;
+    private ERegions region;
 
     @Column(name = "visited")
     private Boolean visited;
@@ -36,7 +37,7 @@ public class Distillery{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public Distillery(String name, String location, Regions region) {
+    public Distillery(String name, double[] location, ERegions region) {
         this.name = name;
         this.location = location;
         this.region = region;
@@ -56,11 +57,11 @@ public class Distillery{
         this.name = name;
     }
 
-    public String getLocation() {
+    public double[] getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(double[] location) {
         this.location = location;
     }
 
@@ -104,11 +105,11 @@ public class Distillery{
         this.id = id;
     }
 
-    public Regions getRegion() {
+    public ERegions getRegion() {
         return region;
     }
 
-    public void setRegion(Regions region) {
+    public void setRegion(ERegions region) {
         this.region = region;
     }
 

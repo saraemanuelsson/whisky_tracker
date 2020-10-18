@@ -2,8 +2,8 @@ package com.codeclan.example.whisky_app_backend.components;
 
 
 import com.codeclan.example.whisky_app_backend.models.Distillery;
+import com.codeclan.example.whisky_app_backend.models.ERegions;
 import com.codeclan.example.whisky_app_backend.models.Person;
-import com.codeclan.example.whisky_app_backend.models.Regions;
 import com.codeclan.example.whisky_app_backend.models.Whisky;
 import com.codeclan.example.whisky_app_backend.repositories.DistilleryRepository;
 import com.codeclan.example.whisky_app_backend.repositories.PersonRepository;
@@ -30,7 +30,8 @@ public class DataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args) {
-        Distillery glenMorangie = new Distillery("GlenMorangie", "Tain", Regions.HIGHLANDS);
+        double[] location = {43.23452354, 7645.3456356};
+        Distillery glenMorangie = new Distillery("GlenMorangie", location, ERegions.HIGHLANDS);
         distilleryRepository.save(glenMorangie);
 
         Person sara = new Person("Sara");
