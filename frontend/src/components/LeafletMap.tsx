@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { Map, TileLayer, Marker, Popup } from "react-leaflet"
 import { LatLngTuple } from "leaflet"
-import { useForm } from "react-hook-form"
+
+import {DistilleryForm} from "./DistilleryForm"
 
 interface Props {
     className?: string
@@ -13,7 +14,6 @@ export const LeafletMap: React.FC<Props> = (props) => {
     const zoom: number = 7
     const [ marker, setMarker ] = useState<Array<number>>([0,0])
     const [ addNewDistillery, setAddNewDistillery ] = useState<boolean>(false)
-    const { register, handleSubmit, watch, errors } = useForm()
 
     const handleClick = (event:any) => {
         console.log(event.latlng);
@@ -23,10 +23,6 @@ export const LeafletMap: React.FC<Props> = (props) => {
             setMarker(clickedLocation)
         }
     }
-
-   const handleLogin = () => {
-
-   }
     
     return (
         <div className="map-div">
@@ -37,15 +33,7 @@ export const LeafletMap: React.FC<Props> = (props) => {
                 </TileLayer>
                 <Marker position={[marker[0], marker[1]]}>
                         <Popup>
-                            <form onSubmit={handleSubmit(handleLogin)}>
-                                <label htmlFor="distillery_name"></label>
-                                <input type="text" name="distillery_name" placeholder="Distillery" ref={register({required: true})}/>
-                                {errors.distillery_name && <span>Required field</span>}
-                                <label htmlFor="region"></label>
-                                <input type="dropdown" name="region" placeholder="Region" ref={register({required: true})}/>
-                                {errors.region && <span>Required field</span>}
-                                <input type="submit" value="Save"/>
-                            </form>
+                            <DistilleryForm />
                         </Popup>
                 </Marker>
             </Map>

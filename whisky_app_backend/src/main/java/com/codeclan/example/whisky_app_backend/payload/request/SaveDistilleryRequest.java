@@ -30,20 +30,4 @@ public class SaveDistilleryRequest {
     public double[] getLocation() {
         return location;
     }
-
-//    public ERegions getRegionEnum() {
-//        if (region == "Highlands") {
-//            return ERegions.HIGHLANDS;
-//        } else if (region == "Lowland") {
-//            return ERegions.LOWLAND;
-//        } else if (region == "Speyside") {
-//            return ERegions.SPEYSIDE;
-//        } else if (region == "Islands") {
-//            return ERegions.ISLANDS;
-//        } else if (region == "Campbeltown") {
-//            return ERegions.CAMPBElTOWN;
-//        } else {
-//            return ERegions.ISLAY;
-//        }
-//    }
 }
